@@ -1,0 +1,39 @@
+{
+  "ctc": {
+    "wer": 0.9984760743675709,
+    "cer": 0.983402732977538
+  },
+  "whisper_zeroshot": {
+    "wer": 1.5521698984302863,
+    "cer": 1.2934833065524014
+  },
+  "whisper_finetuned": {
+    "wer": 3.92927054478301,
+    "cer": 3.2316729155507944
+  },
+  "slam_asr_test": {
+    "wer": 2.0609942055504726,
+    "cer": 1.8561876832844575,
+    "hindi_wer": 0.9417552144824872,
+    "english_wer": 1.0,
+    "n_hindi_words": 2541,
+    "n_english_words": 722,
+    "oov_rate": 0.04910033546813053
+  },
+  "slam_asr_blind": {
+    "wer": 1.6307728011139475,
+    "cer": 1.5114165999717528,
+    "hindi_wer": 0.9580559254327563,
+    "english_wer": 1.0,
+    "n_hindi_words": 3004,
+    "n_english_words": 1290,
+    "oov_rate": 0.027152471571130193
+  },
+  "settings": {
+    "slam_train_hours": 3.0,
+    "infer_batch_size": 8,
+    "infer_max_new_tok": 100,
+    "eval_limit_test": 300,
+    "eval_limit_blind": 300
+  }
+}
