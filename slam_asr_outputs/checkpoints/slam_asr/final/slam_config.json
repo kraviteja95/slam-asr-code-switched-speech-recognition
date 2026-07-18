@@ -1,0 +1,25 @@
+{
+  "encoder_name": "openai/whisper-base",
+  "decoder_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "projector_hidden_dim": 2048,
+  "projector_downsample_factor": 5,
+  "projector_n_conv_layers": 1,
+  "projector_dropout": 0.0,
+  "load_in_4bit": true,
+  "torch_dtype": "bfloat16",
+  "use_lora": true,
+  "lora_r": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "lora_target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "up_proj",
+    "down_proj",
+    "gate_proj"
+  ],
+  "freeze_encoder": true,
+  "freeze_llm_backbone": true
+}
