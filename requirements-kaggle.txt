@@ -1,0 +1,11 @@
+# Extras to install at the top of every Kaggle notebook.
+# Kaggle images already ship torch / torchaudio / transformers / datasets / librosa,
+# so we only pin the versions that Kaggle typically has too-old.
+
+-U transformers>=4.44.0
+-U accelerate>=0.30.0
+-U peft>=0.11.0
+-U bitsandbytes>=0.43.0
+-U jiwer>=3.0.4
+-U gradio>=4.36.0
+-U indic-nlp-library>=0.92
