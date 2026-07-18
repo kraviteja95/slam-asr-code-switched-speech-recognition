@@ -48,7 +48,11 @@ slam-asr-code-switched-speech-recognition/
 │
 ├── docs/
 │   ├── report_outline.md                                ← full report content (export to PDF)
-│   └── video_presentation_script.md                     ← 5-min video guide
+│   ├── video_presentation_script.md                     ← 6-min video recording guide
+│   └── video_cheatsheet.pdf                             ← one-page printable version of the script
+│
+├── scripts/                                             ← Helper scripts (host-side, not run on Kaggle)
+│   └── build_video_cheatsheet.py                        ← regenerates docs/video_cheatsheet.pdf via reportlab
 │
 ├── slam_asr_outputs/                                    ← All committed training-run artefacts
 │   ├── src/                                             ← Python source package (data / features / models / evaluation)
@@ -173,7 +177,17 @@ model = load_slam_asr_from_checkpoint(
 
 The full runnable example is [`notebooks/slam_asr_inferencing_demo_transcribe.ipynb`](notebooks/slam_asr_inferencing_demo_transcribe.ipynb).
 
-## 8. Deliverables checklist
+## 8. Helper scripts
+
+Small host-side utilities that are not part of the training/inference pipeline live in [`scripts/`](scripts/). They exist to regenerate committed artefacts on demand and are safe to re-run at any time.
+
+| Script | What it does | How to run |
+|---|---|---|
+| [`scripts/build_video_cheatsheet.py`](scripts/build_video_cheatsheet.py) | Rebuilds the one-page printable PDF at [`docs/video_cheatsheet.pdf`](docs/video_cheatsheet.pdf) from the beat-by-beat content in [`docs/video_presentation_script.md`](docs/video_presentation_script.md). Uses `reportlab` only — no other deps. | `python3 scripts/build_video_cheatsheet.py` |
+
+Add new helpers here (dataset stat dumps, plot regenerators, etc.) — keep the pattern **"reads committed artefacts, writes a committed artefact, no external state."**
+
+## 9. Deliverables checklist
 
 - [x] End-to-end trained SLAM-ASR model in [`slam_asr_outputs/checkpoints/slam_asr/final/`](slam_asr_outputs/checkpoints/slam_asr/final/) (91 MB — LoRA + projector; frozen backbones re-download from HuggingFace)
 - [x] Two executed Kaggle notebooks under [`notebooks/`](notebooks/)
@@ -182,12 +196,12 @@ The full runnable example is [`notebooks/slam_asr_inferencing_demo_transcribe.ip
 - [ ] `docs/report.pdf` — export from [`docs/report_outline.md`](docs/report_outline.md)
 - [ ] `docs/demo.mp4` — record following [`docs/video_presentation_script.md`](docs/video_presentation_script.md)
 
-## 9. License & attribution
+## 10. License & attribution
 
 - Dataset: © MUCS 2021 challenge organisers. Redistribution follows the challenge terms.
 - Uses: [Whisper](https://github.com/openai/whisper) (MIT), [Qwen-2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) (Apache-2.0), [PEFT](https://github.com/huggingface/peft), [bitsandbytes](https://github.com/bitsandbytes-foundation/bitsandbytes), [jiwer](https://github.com/jitsi/jiwer).
 
-## 10. References
+## 11. References
 
 1. Radford, A., et al. *Robust Speech Recognition via Large-Scale Weak Supervision*. OpenAI Whisper technical report, 2022.
 2. Ma, Z., et al. *An Embarrassingly Simple Approach for LLM with Strong ASR Capacity*. arXiv:2402.08846, 2024.
