@@ -193,8 +193,8 @@ Add new helpers here (dataset stat dumps, plot regenerators, etc.) — keep the 
 - [x] Two executed Kaggle notebooks under [`notebooks/`](notebooks/)
 - [x] WER / CER / per-language WER / OOV rate in [`slam_asr_outputs/results/summary.json`](slam_asr_outputs/results/summary.json)
 - [x] 300 test + 300 blindtest predictions in [`slam_asr_outputs/predictions/`](slam_asr_outputs/predictions/)
-- [ ] `docs/report.pdf` — export from [`docs/report_outline.md`](docs/report_outline.md)
-- [ ] `docs/demo.mp4` — record following [`docs/video_presentation_script.md`](docs/video_presentation_script.md)
+- [x] `docs/report.pdf` — export from [`docs/report_outline.md`](docs/report_outline.md)
+- [x] `docs/demo.mp4` — record following [`docs/video_presentation_script.md`](docs/video_presentation_script.md)
 
 ## 10. License & attribution
 
